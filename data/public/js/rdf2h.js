@@ -176,6 +176,7 @@ RDF2h.prototype.getRenderer = function (renderee) {
         return true;
     }
     function resolveTemplateNode(templateURI) {
+        console.log("templateURI = "+templateURI);
         if (!window) {
             return "Could not get template: " + templateURI + ", no window object."
         }
@@ -184,7 +185,7 @@ RDF2h.prototype.getRenderer = function (renderee) {
             return "Could not get template: " + templateURI + ", the prefix must be " + pageURIPrefix + "."
         }
         var id = templateURI.substring(pageURIPrefix.length);
-        console.log("ID = "+id);
+        // console.log("ID = "+id);
         return document.getElementById(id).textContent;
     }
     function templateRenderer(template) {
