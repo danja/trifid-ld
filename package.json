@@ -2,13 +2,13 @@
   "name": "trifid-ld",
   "description": "Trifid-LD - Lightweight Linked Data Server and Proxy",
   "version": "0.0.2",
-  "homepage": "https://github.com/zazukoians/trifid-ld",
+  "homepage": "https://github.com/danja/trifid-ld",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zazukoians/trifid-ld.git"
+    "url": "https://github.com/danja/trifid-ld.git"
   },
   "bugs": {
-    "url": "https://github.com/zazukoians/trifid-ld/issues"
+    "url": "https://github.com/danja/trifid-ld/issues"
   },
   "dependencies": {
     "body-parser": "1.10.*",
