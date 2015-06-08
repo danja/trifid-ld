@@ -5,7 +5,7 @@
 @prefix s: <https://schema.org/>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
-<page> a r2h:Matcher ;
+<page-template> a r2h:Matcher ;
   r2h:triplePattern [    
     r2h:subject r2h:this;
     r2h:predicate s:headline;
@@ -14,26 +14,13 @@
     r2h:context r2h:Default;
     r2h:mustache <#page-template>
   ];
-  r2h:before <title>.
-
-<title> a r2h:Matcher ;
-  r2h:triplePattern [    
-    r2h:subject r2h:this;
-    r2h:predicate dc:title;
-  ];
-  r2h:template [ 
-    r2h:context r2h:Default;
-    r2h:mustache '''<h2>{{rdf:type}}</h2>
-        {{{:continue}}}'''
-  ];
   r2h:before <givenName>.
 
 
-          
 <givenName> a r2h:Matcher ;
   r2h:triplePattern [    
     r2h:subject r2h:this;
-    r2h:predicate foaf:name;
+    r2h:predicate s:givenName;
   ];
   r2h:template [ 
     r2h:context r2h:Default;
@@ -45,11 +32,11 @@
 <familyName> a r2h:Matcher ;
   r2h:triplePattern [    
     r2h:subject r2h:this;
-    r2h:predicate rdfs:label;
+    r2h:predicate s:familyName;
   ];
   r2h:template [ 
     r2h:context r2h:Default;
-    r2h:mustache '''Label: {{s:familyName}}<br/>
+    r2h:mustache ''' {{s:familyName}}<br/>
          {{{:continue}}}'''
   ];
   r2h:before <catchall>.
