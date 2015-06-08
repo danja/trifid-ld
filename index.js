@@ -12,7 +12,7 @@ var
   morgan = require('morgan'),
   path = require('path'),
   bunyan  = require('bunyan'),
-  renderHtmlMiddleware = require('./lib/render-html-middleware'),
+  renderHtmlMiddleware = require('./lib/x-render-html-middleware'),
   sparqlProxy = require('./lib/sparql-proxy'),
   sparqlSearch = require('./lib/sparql-search');
 
