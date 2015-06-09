@@ -46,7 +46,7 @@ function RDF2h(matcherGraph) {
         }
         this.matchers.splice(getInsertPosition(), 0, matcherToPlace);
     }
-    console.log(this.matchers);
+    console.log("MATCHERS = "+this.matchers);
 }
 
 (function () {
@@ -185,7 +185,8 @@ RDF2h.prototype.getRenderer = function (renderee) {
             return "Could not get template: " + templateURI + ", the prefix must be " + pageURIPrefix + "."
         }
         var id = templateURI.substring(pageURIPrefix.length);
-        // console.log("ID = "+id);
+        console.log("ID = "+id);
+        console.log("document.getElementById(id) = "+document.getElementById(id));
         return document.getElementById(id).textContent;
     }
     function templateRenderer(template) {
