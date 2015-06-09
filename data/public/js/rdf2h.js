@@ -196,6 +196,7 @@ RDF2h.prototype.getRenderer = function (renderee) {
     }
     for (var i = this.startMatcherIndex; i < this.matchers.length; i++) {
         var matcher = this.matchers[i];
+        console.log("matcher "+i+" = "+matcher);
         var cfMatcher = cf.node(matcher);
         if (matches(cfMatcher)) {
             renderee.currentMatcherIndex = i;

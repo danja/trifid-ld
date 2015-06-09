@@ -14,31 +14,43 @@
     r2h:context r2h:Default;
     r2h:mustache <#page-template>
   ];
-  r2h:before <givenName>.
-          
-<givenName> a r2h:Matcher ;
-  r2h:triplePattern [    
-    r2h:subject r2h:this;
-    r2h:predicate s:givenName;
-  ];
-  r2h:template [ 
-    r2h:context r2h:Default;
-    r2h:mustache '''Name: {{s:givenName}}<br/>
-         {{{:continue}}}'''
-  ];
-  r2h:before <familyName>.  
+  r2h:before <title>.
 
-<familyName> a r2h:Matcher ;
+<title> a r2h:Matcher ;
   r2h:triplePattern [    
     r2h:subject r2h:this;
-    r2h:predicate s:familyName;
+    r2h:predicate dc:title;
   ];
   r2h:template [ 
     r2h:context r2h:Default;
-    r2h:mustache '''Label: {{s:familyName}}<br/>
+    r2h:mustache '''<h2>{{dc:title}}</h2>
+        {{{:continue}}}'''
+  ];
+  r2h:before <label>.
+
+<label> a r2h:Matcher ;
+  r2h:triplePattern [    
+    r2h:subject r2h:this;
+    r2h:predicate rdfs:label;
+  ];
+  r2h:template [ 
+    r2h:context r2h:Default;
+    r2h:mustache '''Label: {{rdfs:label}}<br/>
          {{{:continue}}}'''
   ];
   r2h:before <catchall>.
+          
+<name> a r2h:Matcher ;
+  r2h:triplePattern [    
+    r2h:subject r2h:this;
+    r2h:predicate foaf:name;
+  ];
+  r2h:template [ 
+    r2h:context r2h:Default;
+    r2h:mustache '''Name: {{foaf:name}}<br/>
+         {{{:continue}}}'''
+  ];
+  r2h:before <label>.  
 
 <catchall> a r2h:Matcher ;
   r2h:template [ 

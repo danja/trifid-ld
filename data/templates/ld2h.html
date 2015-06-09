@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="render" resource="http://localhost:8080/data/person/sheldon-cooper">
+<html class="render" resource="">
     <head>
         <title>This will be replaced when the data is loaded</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="matchers" href="/matchers/matchers-example.ttl" type="text/turtle" />
-        <script src="/js/jquery.js"></script>
         <script src="/js/rdf2h.js"></script>
+        <script src="/js/jquery.min.js"></script>
         <script src="/js/ld2h.js"></script>
         
         <script id="data" type="text/turtle">
@@ -20,7 +20,7 @@
 
         {{graph}} # this is the inserted data
         </script>
-        
+
         <script id="page-template" type="text/x-mustache-template">
     <head>
       <title>{{s:headline}}</title>
@@ -28,15 +28,12 @@
     <body>
         <h1>{{s:headline}}</h1>
         <p>{{{s:text}}}</p>
-
-      
+        
+          <p>{{s:givenName}}</p>
     
         
-          <span resource="http://localhost:8080/data/person/sheldon-cooper" class="render"> should appear here</span>
-        <span resource="http://localhost:8080/data/person/sheldon-cooper" class="fetch"> or should appear here</span>
-
-<span resource="https://www.w3.org/People/Berners-Lee/card#i" class="fetch">TimBL from remote RDF should appear here</span>
-      
+ <span resource="http://localhost:8080/data/person/sheldon-cooper" class="fetch"> or should appear here</span>
+        
     </body>
         </script>
             
